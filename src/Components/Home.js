@@ -18,7 +18,7 @@ class Home extends Component {
     }
   //Sends a GET request to the express middleware which returns an array of all the car items stored in cars.json
   getCar() {
-        fetch("/api")
+        fetch("https://car-app-server.herokuapp.com/api")
         .then(res => res.json())
         .then(
         (result) => {
@@ -37,7 +37,7 @@ class Home extends Component {
   //Sends a DELETE request to the express middleware which deletes a car item from the cars.json file
   onDeleteStudent = (itemId) => {           
     // Default options are marked with *
-    return fetch('/car/'+itemId, {
+    return fetch('https://car-app-server.herokuapp.com/car/'+itemId, {
       method: "DELETE",
     })
     .then(response => response.json())
@@ -59,7 +59,7 @@ class Home extends Component {
   //Sends a POST request to the express middleware which adds a car item to the cars.json file
   postCar = (data) => {
   // Default options are marked with 
-    return fetch('/car', {
+    return fetch('https://car-app-server.herokuapp.com/car', {
       method: "POST",
       headers: {
       "Content-Type": "application/json",
@@ -86,7 +86,7 @@ class Home extends Component {
   //Sends a PUT request to the express middleware which changes either the seats or model field
   putCar = (id,data) => {
     // Default options are marked with 
-    return fetch('/car/'+id, {
+    return fetch('https://car-app-server.herokuapp.com/car/'+id, {
       method: "PUT",
       headers: {
       "Content-Type": "application/json",
