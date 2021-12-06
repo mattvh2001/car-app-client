@@ -37,7 +37,7 @@ class Home extends Component {
   //Sends a DELETE request to the express middleware which deletes a car item from the cars.json file
   onDeleteStudent = (itemId) => {           
     // Default options are marked with *
-    return fetch('https://car-app-server.herokuapp.com/car/'+itemId, {
+    return fetch("https://car-app-server.herokuapp.com/car/"+itemId, {
       method: "DELETE",
     })
     .then(response => response.json())
